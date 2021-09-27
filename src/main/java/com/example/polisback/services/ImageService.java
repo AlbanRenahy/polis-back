@@ -1,13 +1,11 @@
 package com.example.polisback.services;
 
+import com.example.polisback.models.Image;
+
 import java.util.List;
 
 public interface ImageService {
-    public List<ImageService> findAll();
+    public List<Image> findAll();
 
-    public ImageService putImage(ImageService ImageService);
-
-    public ImageService save(ImageService ImageService);
-
-    public void delete(String id);
+    public Image save(Image entity);
 }

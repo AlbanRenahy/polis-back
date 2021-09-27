@@ -1,25 +1,23 @@
 package com.example.polisback.services;
 
+import com.example.polisback.models.Image;
+import com.example.polisback.repositories.ImageRepository;
+
 import java.util.List;
 
 public class ImageServiceImpl implements ImageService{
+    private ImageRepository repository;
+
+    public ImageServiceImpl(ImageRepository repository){
+        this.repository = repository;
+    }
     @Override
-    public List<ImageService> findAll() {
-        return null;
+    public List<Image> findAll() {
+        return this.repository.findAll();
     }
 
     @Override
-    public ImageService putImage(ImageService ImageService) {
-        return null;
-    }
-
-    @Override
-    public ImageService save(ImageService ImageService) {
-        return null;
-    }
-
-    @Override
-    public void delete(String id) {
-
+    public Image save(Image entity) {
+        return this.repository.save(entity);
     }
 }
