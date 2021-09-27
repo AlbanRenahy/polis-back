@@ -13,7 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Document
 @Entity
-@Table(name="lieu")
+@Table(name="Lieu")
 public class Lieu {
     @Id
     private Long id;
@@ -39,5 +39,4 @@ public class Lieu {
 
     @OneToMany (mappedBy = "lieu")
     private Set<Image> images;
-
 }
