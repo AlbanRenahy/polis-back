@@ -20,6 +20,4 @@ public class Commentaire {
     private Date dateAjout;
 
 
-
-
 }
