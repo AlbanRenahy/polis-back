@@ -1,38 +1,24 @@
 package com.example.polisback.services;
 
+import com.example.polisback.models.Utilisateur;
 import com.example.polisback.repositories.UtilisateurRepository;
 
 import java.util.List;
 
 public class UtilisateurServiceImpl implements UtilisateurService{
-    private UtilisateurRepository utilisateurRepository;
+    private UtilisateurRepository repository;
 
-    public UtilisateurServiceImpl(UtilisateurRepository utilisateurRepository) {
-        this.utilisateurRepository = utilisateurRepository;
+    public UtilisateurServiceImpl(UtilisateurRepository repository) {
+        this.repository = repository;
     }
 
     @Override
-    public List<UtilisateurService> findAll() {
+    public List<Utilisateur> findAll() {
         return null;
     }
 
     @Override
-    public UtilisateurService putLieu(UtilisateurService UtilisateurService) {
-        return null;
-    }
-
-    @Override
-    public UtilisateurService save(UtilisateurService UtilisateurService) {
-        return null;
-    }
-
-    @Override
-    public UtilisateurService findByNomUtilisateur(String nomLieu) {
-        return null;
-    }
-
-    @Override
-    public void delete(String id) {
-
+    public Utilisateur save(Utilisateur entity) {
+        return this.repository.save(entity);
     }
 }

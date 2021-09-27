@@ -1,15 +1,13 @@
 package com.example.polisback.services;
 
+import com.example.polisback.models.Image;
+import com.example.polisback.models.Utilisateur;
+
 import java.util.List;
 
 public interface UtilisateurService {
-    public List<UtilisateurService> findAll();
+    public List<Utilisateur> findAll();
 
-    public UtilisateurService putLieu(UtilisateurService UtilisateurService);
+    public Utilisateur save(Utilisateur entity);
 
-    public UtilisateurService save(UtilisateurService UtilisateurService);
-
-    public UtilisateurService findByNomUtilisateur(String nomLieu);
-
-    public void delete(String id);
 }
