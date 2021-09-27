@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Commentaire")
+@Table(name = "commentaire")
 @Data
 public class Commentaire {
     @Id

@@ -37,4 +37,7 @@ public class Lieu {
     @OneToMany (mappedBy = "lieu")
     private Set<Utilisateur> utilisateurs;
 
+    @OneToMany (mappedBy = "lieu")
+    private Set<Image> images;
+
 }

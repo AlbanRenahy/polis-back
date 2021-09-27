@@ -28,6 +28,7 @@ public class AppConfig {
         return (UtilisateurService) new UtilisateurServiceImpl(utilisateurRepository);
     }
 
+
     public CommentaireService commentaireService(CommentaireRepository commentaireRepository){
         return new CommentaireServiceImpl(commentaireRepository);
     }
