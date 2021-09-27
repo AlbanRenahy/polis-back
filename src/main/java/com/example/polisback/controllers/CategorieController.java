@@ -28,7 +28,7 @@ public class CategorieController {
         return categorieService.save(categorie);
     }
 
-    @PostMapping("")
+    @PutMapping("")
     public Categorie putCategorie(@RequestBody Categorie categorie) {
         return categorieService.putCategorie(categorie);
     }

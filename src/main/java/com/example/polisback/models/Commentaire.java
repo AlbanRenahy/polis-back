@@ -20,4 +20,7 @@ public class Commentaire {
     private Date dateAjout;
 
     /*TODO Ajouter liaison many to one entre commentaire et lieu*/
+    @ManyToOne
+    @JoinColumn(name = "lieu_id", referencedColumnName = "id")
+    private Lieu lieu;
 }

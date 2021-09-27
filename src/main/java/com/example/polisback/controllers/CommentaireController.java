@@ -28,7 +28,7 @@ public class CommentaireController {
         return commentaireService.save(commentaire);
     }
 
-    @PostMapping("")
+    @PutMapping("")
     public Commentaire putCommentaire(@RequestBody Commentaire commentaire) {
         return commentaireService.putCommentaire(commentaire);
     }

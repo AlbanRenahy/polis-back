@@ -11,7 +11,6 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document
 @Entity
 @Table(name="Lieu")
 public class Lieu {
@@ -33,5 +32,18 @@ public class Lieu {
     @OneToOne
     @JoinColumn(name="TempsDeVisite_id")
     private TempsDeVisite tempsDeVisite;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="lieu_has_categorie",
+            joinColumns = @JoinColumn(name="lieu_id"),
+            inverseJoinColumns = @JoinColumn(name="categorie_id")
+    )
+    private Set<Categorie>categories;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Commentaire> commentaires;
+
+
 
 }
