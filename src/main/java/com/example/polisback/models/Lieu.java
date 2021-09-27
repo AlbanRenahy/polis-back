@@ -12,6 +12,8 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document
+@Entity
+@Table(name="lieu")
 public class Lieu {
     @Id
     private Long id;
@@ -31,5 +33,8 @@ public class Lieu {
     @OneToOne
     @JoinColumn(name="TempsDeVisite_id")
     private TempsDeVisite tempsDeVisite;
+
+    @OneToMany (mappedBy = "lieu")
+    private Set<Utilisateur> utilisateurs;
 
 }
