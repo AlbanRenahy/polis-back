@@ -17,4 +17,8 @@ public class Image {
 
     @Column(name = "nomImage")
     private String nomImage;
+
+    @ManyToOne
+    @JoinColumn(name="lieu_id", referencedColumnName = "id")
+    private Lieu lieu;
 }

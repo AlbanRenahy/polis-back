@@ -28,6 +28,7 @@ public class AppConfig {
     public UtilisateurService utilisateurService(UtilisateurRepository utilisateurRepository){
         return new UtilisateurServiceImpl(utilisateurRepository);
     }
+
     @Bean
     public CommentaireService commentaireService(CommentaireRepository commentaireRepository){
         return new CommentaireServiceImpl(commentaireRepository);

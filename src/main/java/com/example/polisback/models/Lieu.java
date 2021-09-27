@@ -32,4 +32,9 @@ public class Lieu {
     private String note;
 
 
+    @OneToMany (mappedBy = "lieu")
+    private Set<Utilisateur> utilisateurs;
+
+    @OneToMany (mappedBy = "lieu")
+    private Set<Image> images;
 }

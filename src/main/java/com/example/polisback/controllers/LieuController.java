@@ -1,9 +1,12 @@
 package com.example.polisback.controllers;
 
 import com.example.polisback.models.Lieu;
+import com.example.polisback.models.Utilisateur;
 import com.example.polisback.services.LieuService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +44,10 @@ public class LieuController {
     public Lieu findByNomLieu(@PathVariable String nomLieu){
         return this.lieuService.findByNomLieu(nomLieu);
     }
+
+    @ManyToOne
+    @JoinColumn(name="user_id", referencedColumnName = "id")
+    private Utilisateur utilisateur;
 }
 
 
