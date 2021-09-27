@@ -1,4 +1,7 @@
 package com.example.polisback.repositories;
 
-public interface CommentaireRepository {
+import com.example.polisback.models.Commentaire;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommentaireRepository extends JpaRepository<Commentaire, Long> {
 }

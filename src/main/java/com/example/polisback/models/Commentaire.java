@@ -19,7 +19,5 @@ public class Commentaire {
     @Column(name = "dateAjout")
     private Date dateAjout;
 
-
-
-
+    /*TODO Ajouter liaison many to one entre commentaire et lieu*/
 }
