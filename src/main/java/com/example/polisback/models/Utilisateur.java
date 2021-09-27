@@ -24,4 +24,8 @@ public class Utilisateur {
 
     @Column(name="password")
     private String password;
+
+    @ManyToOne
+    @JoinColumn(name="lieu_id", referencedColumnName = "id")
+    private Lieu lieu;
 }

@@ -34,4 +34,9 @@ public class Lieu {
     @JoinColumn(name="TempsDeVisite_id")
     private TempsDeVisite tempsDeVisite;
 
+    @OneToMany (mappedBy = "lieu")
+    private Set<Utilisateur> utilisateurs;
+
+    @OneToMany (mappedBy = "lieu")
+    private Set<Image> images;
 }
