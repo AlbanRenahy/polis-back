@@ -5,6 +5,7 @@ import com.example.polisback.models.TempsDeVisite;
 import com.example.polisback.repositories.LieuRepository;
 import com.example.polisback.repositories.TempsDeVisiteRepository;
 
+import java.util.Date;
 import java.util.List;
 
 public class TempsDeVisiteServiceImpl implements TempsDeVisiteService {
@@ -35,8 +36,8 @@ public class TempsDeVisiteServiceImpl implements TempsDeVisiteService {
     }
 
     @Override
-    public TempsDeVisite findById(Long id) {
-        TempsDeVisite tempsDeVisite = this.tempsDeVisiteRepository.findById(id);
+    public TempsDeVisite findByHoraireVisite(Date horaireVisite) {
+        TempsDeVisite tempsDeVisite = this.tempsDeVisiteRepository.findByHoraireVisite(horaireVisite);
         tempsDeVisite.setId(tempsDeVisite.getId());
         return tempsDeVisite;
     }

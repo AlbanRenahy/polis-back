@@ -23,7 +23,7 @@ public class LieuServiceImpl implements LieuService{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Long id) {
         this.lieuRepository.deleteById(id);
     }
 

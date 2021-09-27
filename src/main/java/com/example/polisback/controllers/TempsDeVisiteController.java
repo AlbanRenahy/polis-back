@@ -6,11 +6,12 @@ import com.example.polisback.services.LieuService;
 import com.example.polisback.services.TempsDeVisiteService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("tempsDeVisite")
+@RequestMapping(name = "tempsDeVisite")
 public class TempsDeVisiteController {
 
     private TempsDeVisiteService tempsDeVisiteService;
@@ -19,29 +20,29 @@ public class TempsDeVisiteController {
         this.tempsDeVisiteService = tempsDeVisiteService;
     }
 
-    @GetMapping
+    @GetMapping("/TempsDeVisite/findAll")
     public List<TempsDeVisite> findAll(){
         return this.tempsDeVisiteService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/TempsDeVisite/save")
     public TempsDeVisite save(@RequestBody TempsDeVisite tempsDeVisite) {
         return this.tempsDeVisiteService.save(tempsDeVisite);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/TempsDeVisite/{id}")
     public void delete(@PathVariable String id) {
         this.tempsDeVisiteService.delete(id);
     }
 
-    @PutMapping
+    @PostMapping("/putTempsDeVisite")
     public TempsDeVisite putTempsDeVisite(@RequestBody TempsDeVisite tempsDeVisite){
         return this.tempsDeVisiteService.putTempsDeVisite(tempsDeVisite);
     }
 
-    @GetMapping("{nom}")
-    public TempsDeVisite findById(@PathVariable Long id){
-        return this.tempsDeVisiteService.findById(id);
+    @GetMapping("/TempsDeVisite/{horaireVisite}")
+    public TempsDeVisite findByHoraireVisite(@PathVariable Date horaireVisite){
+        return this.tempsDeVisiteService.findByHoraireVisite(horaireVisite);
     }
 
 }

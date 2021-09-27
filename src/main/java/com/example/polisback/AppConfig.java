@@ -1,10 +1,6 @@
 package com.example.polisback;
 
-import com.example.polisback.repositories.ImageRepository;
-import com.example.polisback.repositories.LieuRepository;
-import com.example.polisback.repositories.UtilisateurRepository;
-import com.example.polisback.repositories.CategorieRepository;
-import com.example.polisback.repositories.CommentaireRepository;
+import com.example.polisback.repositories.*;
 import com.example.polisback.repositories.LieuRepository;
 import com.example.polisback.services.*;
 import org.springframework.context.annotation.Bean;
@@ -15,20 +11,25 @@ public class AppConfig {
 
     @Bean
     public LieuService lieuService(LieuRepository lieuRepository){
-        return (LieuService) new LieuServiceImpl(lieuRepository);
+        return new LieuServiceImpl(lieuRepository);
+    }
+
+    @Bean
+    public TempsDeVisiteService tempsDeVisiteService(TempsDeVisiteRepository tempsDeVisiteRepository){
+        return new TempsDeVisiteServiceImpl(tempsDeVisiteRepository);
     }
 
     @Bean
     public ImageService imageService(ImageRepository imageRepository){
-        return (ImageService) new ImageServiceImpl(imageRepository);
+        return new ImageServiceImpl(imageRepository);
     }
 
     @Bean
     public UtilisateurService utilisateurService(UtilisateurRepository utilisateurRepository){
-        return (UtilisateurService) new UtilisateurServiceImpl(utilisateurRepository);
+        return new UtilisateurServiceImpl(utilisateurRepository);
     }
 
-
+    @Bean
     public CommentaireService commentaireService(CommentaireRepository commentaireRepository){
         return new CommentaireServiceImpl(commentaireRepository);
     }

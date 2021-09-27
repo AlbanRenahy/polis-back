@@ -1,9 +1,14 @@
 package com.example.polisback.repositories;
 
-import com.example.polisback.models.Lieu;
 import com.example.polisback.models.TempsDeVisite;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TempsDeVisiteRepository extends MongoRepository<TempsDeVisite, String> {
-    public TempsDeVisite findById(Long id);
+import java.util.Date;
+
+
+public interface TempsDeVisiteRepository extends JpaRepository<TempsDeVisite, Long> {
+
+    public void deleteById(String id);
+
+    TempsDeVisite findByHoraireVisite(Date horaireVisite);
 }

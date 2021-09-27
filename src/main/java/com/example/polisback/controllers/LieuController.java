@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping("lieu")
+@RequestMapping(name = "lieu")
 public class LieuController {
     private LieuService lieuService;
 
@@ -19,27 +20,27 @@ public class LieuController {
         this.lieuService = lieuService;
     }
 
-    @GetMapping
+    @GetMapping("/Lieu/findAll")
     public List<Lieu> findAll(){
         return this.lieuService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/Lieu/save")
     public Lieu save(@RequestBody Lieu lieu) {
         return this.lieuService.save(lieu);
     }
 
-    @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
+    @DeleteMapping("/Lieu/{id}")
+    public void delete(@PathVariable Long id) {
         this.lieuService.delete(id);
     }
 
-    @PutMapping
+    @PostMapping("/putLieu")
     public Lieu putLieu(@RequestBody Lieu lieu){
         return this.lieuService.putLieu(lieu);
     }
 
-    @GetMapping("{nom}")
+    @GetMapping("/Lieu/{nom}")
     public Lieu findByNomLieu(@PathVariable String nomLieu){
         return this.lieuService.findByNomLieu(nomLieu);
     }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("images")
+@RequestMapping(name = "image")
 public class ImageController {
     private ImageService imageService;
 
@@ -17,12 +17,12 @@ public class ImageController {
         this.imageService = imageService;
     }
 
-    @GetMapping
+    @GetMapping("/Image/findAll")
     public List<Image> findAll(){
         return this.imageService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/Image/save")
     public Image save(@RequestBody Image entity) {
         return this.imageService.save(entity);
     }
