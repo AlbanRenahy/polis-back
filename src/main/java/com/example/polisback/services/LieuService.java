@@ -9,7 +9,7 @@ public interface LieuService {
 
     public Lieu save(Lieu lieu);
 
-    public void delete(String id);
+    public void delete(Long id);
 
     public Lieu putLieu(Lieu lieu);
 

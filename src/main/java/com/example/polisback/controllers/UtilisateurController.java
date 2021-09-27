@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("utilisateurs")
+@RequestMapping(name = "utilisateur")
 public class UtilisateurController {
     private UtilisateurService utilisateurService;
 
@@ -19,12 +19,12 @@ public class UtilisateurController {
         this.utilisateurService = utilisateurService;
     }
 
-    @GetMapping
+    @GetMapping("/Utilisateur/findAll")
     public List<Utilisateur> findAll(){
         return this.utilisateurService.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/Utilisateur/save")
     public Utilisateur save(@RequestBody Utilisateur entity) {
         return this.utilisateurService.save(entity);
     }

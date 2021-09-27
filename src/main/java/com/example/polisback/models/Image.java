@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(
-      name = "image"
+      name = "Image"
 )
 @Data
 public class Image {

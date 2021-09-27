@@ -1,8 +1,8 @@
 package com.example.polisback.services;
 
-import com.example.polisback.models.Lieu;
 import com.example.polisback.models.TempsDeVisite;
 
+import java.util.Date;
 import java.util.List;
 
 public interface TempsDeVisiteService {
@@ -14,5 +14,5 @@ public interface TempsDeVisiteService {
 
     public TempsDeVisite putTempsDeVisite(TempsDeVisite tempsDeVisite);
 
-    public TempsDeVisite findById(Long id);
+    public TempsDeVisite findByHoraireVisite(Date horaireVisite);
 }
