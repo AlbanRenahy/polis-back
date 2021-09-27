@@ -1,15 +1,18 @@
 package com.example.polisback.services;
 
+import com.example.polisback.models.Lieu;
+
 import java.util.List;
 
 public interface LieuService {
-    public List<LieuService> findAll();
+    public List<Lieu> findAll();
 
-    public LieuService putLieu(LieuService lieuService);
-
-    public LieuService save(LieuService lieuService);
-
-    public LieuService findByNomLieu(String nomLieu);
+    public Lieu save(Lieu lieu);
 
     public void delete(String id);
+
+    public Lieu putLieu(Lieu lieu);
+
+    public Lieu findByNomLieu(String nomLieu);
+
 }

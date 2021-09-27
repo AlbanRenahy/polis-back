@@ -3,10 +3,10 @@ package com.example.polisback.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Column;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +14,7 @@ import javax.persistence.Column;
 @Document
 public class Lieu {
     @Id
-    private String id;
+    private Long id;
     private double latitude;
     private double longitude;
     @Column(length = 255)
@@ -28,5 +28,8 @@ public class Lieu {
     @Column(length = 500)
     private String note;
 
+    @OneToOne
+    @JoinColumn(name="TempsDeVisite_id")
+    private TempsDeVisite tempsDeVisite;
 
 }
