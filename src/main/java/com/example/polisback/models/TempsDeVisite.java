@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Document
 @Entity
-@Table(name="tempsDeVisite")
+@Table(name="TempsDeVisite")
 public class TempsDeVisite {
     @Id
     private Long id;
