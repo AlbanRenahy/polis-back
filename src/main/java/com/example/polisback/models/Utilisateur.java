@@ -3,6 +3,7 @@ package com.example.polisback.models;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="Utilisateur")
@@ -28,4 +29,9 @@ public class Utilisateur {
     @ManyToOne
     @JoinColumn(name="lieu_id", referencedColumnName = "id")
     private Lieu lieu;
+
+    @OneToMany(cascade=CascadeType.ALL)
+    private Set<Commentaire> commentaires;
+
+
 }
