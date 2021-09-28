@@ -2,6 +2,7 @@ package com.example.polisback.controllers;
 
 import com.example.polisback.models.Image;
 import com.example.polisback.models.Lieu;
+import com.example.polisback.models.TempsDeVisite;
 import com.example.polisback.models.Utilisateur;
 import com.example.polisback.services.ImageService;
 import com.example.polisback.services.UtilisateurService;
@@ -31,6 +32,16 @@ public class UtilisateurController {
     @PostMapping("/Utilisateur/save")
     public Utilisateur save(@RequestBody Utilisateur entity) {
         return this.utilisateurService.save(entity);
+    }
+
+    @DeleteMapping("/Utilisateur/{id}")
+    public void delete(@PathVariable String id) {
+        this.utilisateurService.delete(id);
+    }
+
+    @PostMapping("/putUtilisateur")
+    public Utilisateur putUtilisateur(@RequestBody Utilisateur utilisateur){
+        return this.utilisateurService.putUtilisateur(utilisateur);
     }
 
     @OneToMany(cascade = CascadeType.ALL)

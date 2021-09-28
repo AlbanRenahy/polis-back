@@ -21,4 +21,12 @@ public class UtilisateurServiceImpl implements UtilisateurService{
     public Utilisateur save(Utilisateur entity) {
         return this.repository.save(entity);
     }
+
+    @Override
+    public void delete(String id) {}
+
+    @Override
+    public Utilisateur putUtilisateur(Utilisateur utilisateur) {
+        return this.repository.save(utilisateur);
+    }
 }
