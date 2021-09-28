@@ -37,4 +37,15 @@ public class Lieu {
 
     @OneToMany (mappedBy = "lieu")
     private Set<Image> images;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name="lieu_has_categorie",
+            joinColumns = @JoinColumn(name="lieu_id"),
+            inverseJoinColumns = @JoinColumn(name="categorie_id")
+    )
+    private Set<Categorie> categories;
+
+    @OneToMany (mappedBy = "lieu")
+    private Set<Commentaire> commentaires;
 }
