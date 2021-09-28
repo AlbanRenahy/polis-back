@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "categorie")
+@RequestMapping("categories")
 public class CategorieController {
 
     private CategorieService categorieService;
@@ -18,12 +18,12 @@ public class CategorieController {
         this.categorieService = categorieService;
     }
 
-    @GetMapping("/Categorie/findAll")
+    @GetMapping("")
     public List<Categorie> findAll() {
         return categorieService.findAll();
     }
 
-    @PostMapping("/Categorie/save")
+    @PostMapping("")
     public Categorie save(@RequestBody Categorie categorie) {
         return categorieService.save(categorie);
     }
@@ -33,12 +33,12 @@ public class CategorieController {
         return categorieService.putCategorie(categorie);
     }
 
-    @GetMapping("/Categorie/{id}")
-    public Optional<Categorie> findById(Long id) {
+    @GetMapping("{id}")
+    public Optional<Categorie> findById(@PathVariable Long id) {
         return categorieService.findById(id);
     }
 
-    @DeleteMapping("/Categorie/{id}")
+    @DeleteMapping("{id}")
     public void deleteById(@PathVariable Long id) {
         categorieService.deleteById(id);
     }
