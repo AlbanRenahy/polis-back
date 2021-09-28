@@ -23,4 +23,10 @@ public class Commentaire {
     @ManyToOne
     @JoinColumn(name="lieu_id", referencedColumnName = "id")
     private Lieu lieu;
+
+    @ManyToOne
+    @JoinColumn(name="utilisateur_id", referencedColumnName = "id")
+    private Utilisateur utilisateur;
+
+
 }
