@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "commentaire")
+@RequestMapping("commentaire")
 public class CommentaireController {
 
     private CommentaireService commentaireService;
@@ -18,7 +18,7 @@ public class CommentaireController {
         this.commentaireService = commentaireService;
     }
 
-    @GetMapping("/Commentaire/findAll")
+    @GetMapping("/findAll")
     public List<Commentaire> findAll() {
         return commentaireService.findAll();
     }

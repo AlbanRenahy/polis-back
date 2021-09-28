@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "categorie")
+@RequestMapping("categorie")
 public class CategorieController {
 
     private CategorieService categorieService;
@@ -18,7 +18,7 @@ public class CategorieController {
         this.categorieService = categorieService;
     }
 
-    @GetMapping("/Categorie/findAll")
+    @GetMapping("/findAll")
     public List<Categorie> findAll() {
         return categorieService.findAll();
     }

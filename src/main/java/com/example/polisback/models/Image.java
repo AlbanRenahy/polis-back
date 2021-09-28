@@ -5,14 +5,13 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(
-      name = "Image"
-)
+@Table(name = "Image")
 @Data
 public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID", unique = true, nullable = false)
     private Long id;
 
     @Column(name = "nomImage")
@@ -21,4 +20,6 @@ public class Image {
     @ManyToOne
     @JoinColumn(name="lieu_id", referencedColumnName = "id")
     private Lieu lieu;
+
+
 }

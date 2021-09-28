@@ -15,6 +15,8 @@ import java.util.Set;
 @Table(name="Lieu")
 public class Lieu {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID", unique = true, nullable = false)
     private Long id;
     @Column(name = "latitude")
     private double latitude;
@@ -32,9 +34,23 @@ public class Lieu {
     private String note;
 
 
-    @OneToMany (mappedBy = "lieu")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="LIEU_ID")
     private Set<Utilisateur> utilisateurs;
 
-    @OneToMany (mappedBy = "lieu")
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="LIEU_ID")
     private Set<Image> images;
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="LIEU_ID")
+    private Set<Commentaire> commentaires;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "TEMPSDEVISITE_ID", referencedColumnName = "id")
+    private TempsDeVisite tempsDeVisite;
+
+    @ManyToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="LIEU_ID")
+    private Set<Categorie> categories;
 }

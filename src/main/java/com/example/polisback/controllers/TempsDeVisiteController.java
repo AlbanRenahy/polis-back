@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "tempsDeVisite")
+@RequestMapping("tempsDeVisite")
 public class TempsDeVisiteController {
 
     private TempsDeVisiteService tempsDeVisiteService;
@@ -20,7 +20,7 @@ public class TempsDeVisiteController {
         this.tempsDeVisiteService = tempsDeVisiteService;
     }
 
-    @GetMapping("/TempsDeVisite/findAll")
+    @GetMapping("/findAll")
     public List<TempsDeVisite> findAll(){
         return this.tempsDeVisiteService.findAll();
     }

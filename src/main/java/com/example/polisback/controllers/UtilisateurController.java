@@ -15,7 +15,7 @@ import java.util.Set;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "utilisateur")
+@RequestMapping("utilisateur")
 public class UtilisateurController {
     private UtilisateurService utilisateurService;
 
@@ -23,7 +23,7 @@ public class UtilisateurController {
         this.utilisateurService = utilisateurService;
     }
 
-    @GetMapping("/Utilisateur/findAll")
+    @GetMapping("/findAll")
     public List<Utilisateur> findAll(){
         return this.utilisateurService.findAll();
     }
