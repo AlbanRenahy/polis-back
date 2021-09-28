@@ -15,6 +15,7 @@ import java.util.Set;
 @Table(name="Lieu")
 public class Lieu {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(name = "latitude")
     private double latitude;
