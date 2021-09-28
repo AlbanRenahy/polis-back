@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "lieu")
+@RequestMapping("lieu")
 public class LieuController {
     private LieuService lieuService;
 
@@ -20,7 +20,7 @@ public class LieuController {
         this.lieuService = lieuService;
     }
 
-    @GetMapping("/Lieu/findAll")
+    @GetMapping("/findAll")
     public List<Lieu> findAll(){
         return this.lieuService.findAll();
     }

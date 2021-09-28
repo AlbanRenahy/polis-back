@@ -4,13 +4,15 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
-@Table(name = "commentaire")
+@Table(name = "Commentaire")
 @Data
 public class Commentaire {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID", unique = true, nullable = false)
     private Long id;
 
     @Column(name = "contenu")
@@ -19,14 +21,14 @@ public class Commentaire {
     @Column(name = "dateAjout")
     private Date dateAjout;
 
-    /*TODO Ajouter liaison many to one entre commentaire et lieu*/
-    @ManyToOne
-    @JoinColumn(name="lieu_id", referencedColumnName = "id")
-    private Lieu lieu;
 
-    @ManyToOne
-    @JoinColumn(name="utilisateur_id", referencedColumnName = "id")
-    private Utilisateur utilisateur;
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name="COMMENTAIRE_ID")
+    private Set<Utilisateur> utilisateurs;
+
+    @ManyToOne( cascade = CascadeType.ALL )
+    @JoinColumn( name="LIEU_ID" )
+    private Lieu lieu;
 
 
 }
