@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
 @CrossOrigin
-@RequestMapping( "utilisateurs")
+@RequestMapping("utilisateurs")
 public class UtilisateurController {
     private UtilisateurService utilisateurService;
 
@@ -25,7 +26,7 @@ public class UtilisateurController {
     }
 
     @GetMapping("")
-    public List<Utilisateur> findAll(){
+    public List<Utilisateur> findAll() {
         return this.utilisateurService.findAll();
     }
 
@@ -34,16 +35,20 @@ public class UtilisateurController {
         return this.utilisateurService.save(entity);
     }
 
+    @GetMapping("{id}")
+    public Optional<Utilisateur> getOneUserById(@PathVariable Long id) {
+        return utilisateurService.getOneUserById(id);
+    }
+
     @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
+    public void delete(@PathVariable Long id) {
         this.utilisateurService.delete(id);
     }
 
     @PutMapping("")
-    public Utilisateur putUtilisateur(@RequestBody Utilisateur utilisateur){
+    public Utilisateur putUtilisateur(@RequestBody Utilisateur utilisateur) {
         return this.utilisateurService.putUtilisateur(utilisateur);
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<Lieu> lieux;
+
 }

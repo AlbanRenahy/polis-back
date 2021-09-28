@@ -4,8 +4,9 @@ import com.example.polisback.models.Utilisateur;
 import com.example.polisback.repositories.UtilisateurRepository;
 
 import java.util.List;
+import java.util.Optional;
 
-public class UtilisateurServiceImpl implements UtilisateurService{
+public class UtilisateurServiceImpl implements UtilisateurService {
     private UtilisateurRepository repository;
 
     public UtilisateurServiceImpl(UtilisateurRepository repository) {
@@ -14,7 +15,7 @@ public class UtilisateurServiceImpl implements UtilisateurService{
 
     @Override
     public List<Utilisateur> findAll() {
-        return null;
+        return this.repository.findAll();
     }
 
     @Override
@@ -23,7 +24,14 @@ public class UtilisateurServiceImpl implements UtilisateurService{
     }
 
     @Override
-    public void delete(String id) {}
+    public Optional<Utilisateur> getOneUserById(Long id) {
+        return this.repository.findById(id);
+    }
+
+    @Override
+    public void delete(Long id) {
+        this.repository.deleteById(id);
+    }
 
     @Override
     public Utilisateur putUtilisateur(Utilisateur utilisateur) {
