@@ -16,7 +16,7 @@ import java.util.Set;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "utilisateur")
+@RequestMapping( "utilisateurs")
 public class UtilisateurController {
     private UtilisateurService utilisateurService;
 
@@ -24,22 +24,22 @@ public class UtilisateurController {
         this.utilisateurService = utilisateurService;
     }
 
-    @GetMapping("/Utilisateur/findAll")
+    @GetMapping("")
     public List<Utilisateur> findAll(){
         return this.utilisateurService.findAll();
     }
 
-    @PostMapping("/Utilisateur/save")
+    @PostMapping("")
     public Utilisateur save(@RequestBody Utilisateur entity) {
         return this.utilisateurService.save(entity);
     }
 
-    @DeleteMapping("/Utilisateur/{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable String id) {
         this.utilisateurService.delete(id);
     }
 
-    @PostMapping("/putUtilisateur")
+    @PutMapping("")
     public Utilisateur putUtilisateur(@RequestBody Utilisateur utilisateur){
         return this.utilisateurService.putUtilisateur(utilisateur);
     }

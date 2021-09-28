@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping(name = "commentaire")
+@RequestMapping("commentaires")
 public class CommentaireController {
 
     private CommentaireService commentaireService;
@@ -18,27 +18,27 @@ public class CommentaireController {
         this.commentaireService = commentaireService;
     }
 
-    @GetMapping("/Commentaire/findAll")
+    @GetMapping("")
     public List<Commentaire> findAll() {
         return commentaireService.findAll();
     }
 
-    @PostMapping("/Commentaire/save")
+    @PostMapping("")
     public Commentaire save(@RequestBody Commentaire commentaire) {
         return commentaireService.save(commentaire);
     }
 
-    @PostMapping("/putCommentaire")
+    @PutMapping("")
     public Commentaire putCommentaire(@RequestBody Commentaire commentaire) {
         return commentaireService.putCommentaire(commentaire);
     }
 
-    @GetMapping("/Commentaire/{id}")
+    @GetMapping("{id}")
     public Optional<Commentaire> findById(@PathVariable Long id) {
         return commentaireService.findById(id);
     }
 
-    @DeleteMapping("/Commentaire/{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
         commentaireService.delete(id);
     }
