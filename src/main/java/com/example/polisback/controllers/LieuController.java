@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping("lieu")
+@RequestMapping("lieux")
 public class LieuController {
     private LieuService lieuService;
 
@@ -20,34 +20,31 @@ public class LieuController {
         this.lieuService = lieuService;
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("")
     public List<Lieu> findAll(){
         return this.lieuService.findAll();
     }
 
-    @PostMapping("/Lieu/save")
+    @PostMapping("")
     public Lieu save(@RequestBody Lieu lieu) {
         return this.lieuService.save(lieu);
     }
 
-    @DeleteMapping("/Lieu/{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
         this.lieuService.delete(id);
     }
 
-    @PostMapping("/putLieu")
+    @PutMapping("")
     public Lieu putLieu(@RequestBody Lieu lieu){
         return this.lieuService.putLieu(lieu);
     }
 
-    @GetMapping("/Lieu/{nom}")
+    @GetMapping("{nomLieu}")
     public Lieu findByNomLieu(@PathVariable String nomLieu){
         return this.lieuService.findByNomLieu(nomLieu);
     }
 
-    @ManyToOne
-    @JoinColumn(name="user_id", referencedColumnName = "id")
-    private Utilisateur utilisateur;
 }
 
 

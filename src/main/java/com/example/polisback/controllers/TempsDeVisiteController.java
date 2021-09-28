@@ -16,33 +16,34 @@ public class TempsDeVisiteController {
 
     private TempsDeVisiteService tempsDeVisiteService;
 
-    public TempsDeVisiteController(LieuService lieuService) {
+    public TempsDeVisiteController(TempsDeVisiteService tempsDeVisiteService) {
         this.tempsDeVisiteService = tempsDeVisiteService;
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("")
     public List<TempsDeVisite> findAll(){
         return this.tempsDeVisiteService.findAll();
     }
 
-    @PostMapping("/TempsDeVisite/save")
+    @PostMapping("")
     public TempsDeVisite save(@RequestBody TempsDeVisite tempsDeVisite) {
         return this.tempsDeVisiteService.save(tempsDeVisite);
     }
 
-    @DeleteMapping("/TempsDeVisite/{id}")
-    public void delete(@PathVariable String id) {
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable Long id) {
         this.tempsDeVisiteService.delete(id);
     }
 
-    @PostMapping("/putTempsDeVisite")
+    @PutMapping("")
     public TempsDeVisite putTempsDeVisite(@RequestBody TempsDeVisite tempsDeVisite){
         return this.tempsDeVisiteService.putTempsDeVisite(tempsDeVisite);
     }
 
-    @GetMapping("/TempsDeVisite/{horaireVisite}")
+    @GetMapping("{horaireVisite}")
     public TempsDeVisite findByHoraireVisite(@PathVariable Date horaireVisite){
         return this.tempsDeVisiteService.findByHoraireVisite(horaireVisite);
     }
+    /*TODO : methode findByHoraireVisite a reverifier*/
 
 }

@@ -8,7 +8,6 @@ import java.util.Date;
 
 public interface TempsDeVisiteRepository extends JpaRepository<TempsDeVisite, Long> {
 
-    public void deleteById(String id);
 
     TempsDeVisite findByHoraireVisite(Date horaireVisite);
 }

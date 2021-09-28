@@ -26,7 +26,7 @@ public class TempsDeVisiteServiceImpl implements TempsDeVisiteService {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Long id) {
         this.tempsDeVisiteRepository.deleteById(id);
     }
 

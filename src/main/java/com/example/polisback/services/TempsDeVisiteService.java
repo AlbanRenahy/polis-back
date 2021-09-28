@@ -10,7 +10,7 @@ public interface TempsDeVisiteService {
 
     public TempsDeVisite save(TempsDeVisite tempsDeVisite);
 
-    public void delete(String id);
+    public void delete(Long id);
 
     public TempsDeVisite putTempsDeVisite(TempsDeVisite tempsDeVisite);
 
