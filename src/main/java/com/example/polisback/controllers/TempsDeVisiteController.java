@@ -1,6 +1,5 @@
 package com.example.polisback.controllers;
 
-import com.example.polisback.models.Lieu;
 import com.example.polisback.models.TempsDeVisite;
 import com.example.polisback.services.LieuService;
 import com.example.polisback.services.TempsDeVisiteService;

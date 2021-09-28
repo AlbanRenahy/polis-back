@@ -1,19 +1,11 @@
 package com.example.polisback.controllers;
 
-import com.example.polisback.models.Image;
-import com.example.polisback.models.Lieu;
-import com.example.polisback.models.TempsDeVisite;
 import com.example.polisback.models.Utilisateur;
-import com.example.polisback.services.ImageService;
 import com.example.polisback.services.UtilisateurService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @RestController
 @CrossOrigin

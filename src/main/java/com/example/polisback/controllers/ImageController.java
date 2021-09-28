@@ -1,9 +1,7 @@
 package com.example.polisback.controllers;
 
 import com.example.polisback.models.Image;
-import com.example.polisback.models.Utilisateur;
 import com.example.polisback.services.ImageService;
-import com.example.polisback.services.LieuService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
