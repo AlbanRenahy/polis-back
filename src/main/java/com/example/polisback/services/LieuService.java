@@ -15,11 +15,10 @@ public interface LieuService {
 
     public Lieu findByNomLieu(String nomLieu);
 
-
+    public List<Lieu> orderByIdLieu();
 
     public List<Lieu> orderByNomLieu();
 
     public List<Lieu> orderByVille();
-
 
 }
