@@ -15,8 +15,9 @@ import java.util.Set;
 @Table(name="Lieu")
 public class Lieu {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "ID")
     private Long id;
     @Column(name = "latitude")
     private double latitude;
