@@ -45,9 +45,10 @@ public class LieuController {
     }
   
     @GetMapping("/trierId")
-    public List<Lieu> orderByNomLieu() {
+    public List<Lieu> orderByIdLieu() {
         return lieuService.orderByIdLieu();
-      
+    }
+
     @GetMapping("/trierLieu")
     public List<Lieu> orderByNomLieu() {
         return lieuService.orderByNomLieu();
