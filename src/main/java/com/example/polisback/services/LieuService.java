@@ -17,4 +17,8 @@ public interface LieuService {
 
     public List<Lieu> orderByIdLieu();
 
+    public List<Lieu> orderByNomLieu();
+
+    public List<Lieu> orderByVille();
+
 }

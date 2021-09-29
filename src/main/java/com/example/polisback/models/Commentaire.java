@@ -1,8 +1,11 @@
 package com.example.polisback.models;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -11,14 +14,17 @@ import java.util.Set;
 @Data
 public class Commentaire {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "contenu")
     private String contenu;
 
-    @Column(name = "dateAjout")
+    @CreationTimestamp
+    @Column(name = "dateAjout",columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dateAjout;
 
 

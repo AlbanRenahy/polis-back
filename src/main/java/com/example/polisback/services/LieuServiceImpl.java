@@ -40,8 +40,17 @@ public class LieuServiceImpl implements LieuService{
         return lieu;
     }
 
-    @Override
     public List<Lieu> orderByIdLieu() {
         return this.lieuRepository.findAll(Sort.by("ID"));
     }
+  
+    public List<Lieu> orderByNomLieu() {
+        return this.lieuRepository.findAll(Sort.by("nomLieu"));
+    }
+
+    @Override
+    public List<Lieu> orderByVille() {
+        return this.lieuRepository.findAll(Sort.by("ville"));
+    }
+
 }

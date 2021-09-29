@@ -1,8 +1,10 @@
 package com.example.polisback;
 
+import com.example.polisback.models.Utilisateur;
 import com.example.polisback.repositories.*;
 import com.example.polisback.repositories.LieuRepository;
 import com.example.polisback.services.*;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -38,4 +40,5 @@ public class AppConfig {
     public CategorieService categorieService(CategorieRepository categorieRepository){
         return new CategorieServiceImpl(categorieRepository);
     }
+
 }

@@ -43,10 +43,19 @@ public class LieuController {
     public Lieu findByNomLieu(@PathVariable String nomLieu){
         return this.lieuService.findByNomLieu(nomLieu);
     }
-
+  
     @GetMapping("/trierId")
     public List<Lieu> orderByNomLieu() {
         return lieuService.orderByIdLieu();
+      
+    @GetMapping("/trierLieu")
+    public List<Lieu> orderByNomLieu() {
+        return lieuService.orderByNomLieu();
+    }
+
+    @GetMapping("/trierVille")
+    public List<Lieu> orderByVille() {
+        return lieuService.orderByVille();
     }
 }
 
