@@ -44,6 +44,15 @@ public class LieuController {
         return this.lieuService.findByNomLieu(nomLieu);
     }
 
+    @GetMapping("/trierLieu")
+    public List<Lieu> orderByNomLieu() {
+        return lieuService.orderByNomLieu();
+    }
+
+    @GetMapping("/trierVille")
+    public List<Lieu> orderByVille() {
+        return lieuService.orderByVille();
+    }
 }
 
 
