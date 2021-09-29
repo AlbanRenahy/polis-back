@@ -15,4 +15,6 @@ public interface LieuService {
 
     public Lieu findByNomLieu(String nomLieu);
 
+    public List<Lieu> orderByIdLieu();
+
 }
