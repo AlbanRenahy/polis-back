@@ -1,5 +1,8 @@
 package com.example.polisback.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -16,6 +19,7 @@ public class Commentaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @JsonFormat(shape=JsonFormat.Shape.STRING)
     @Column(name = "ID")
     private Long id;
 
@@ -25,6 +29,7 @@ public class Commentaire {
     @CreationTimestamp
     @Column(name = "dateAjout",columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ",shape = JsonFormat.Shape.STRING)
     private Date dateAjout;
 
 
@@ -32,6 +37,7 @@ public class Commentaire {
     @JoinColumn(name="COMMENTAIRE_ID")
     private Set<Utilisateur> utilisateurs;
 
+    @JsonBackReference
     @ManyToOne( cascade = CascadeType.ALL )
     @JoinColumn( name="LIEU_ID" )
     private Lieu lieu;

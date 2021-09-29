@@ -1,5 +1,6 @@
 package com.example.polisback.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -51,6 +52,7 @@ public class Lieu {
     )
     private Set<Categorie> categories;
 
+    @JsonManagedReference
     @OneToMany (mappedBy = "lieu")
     private Set<Commentaire> commentaires;
 

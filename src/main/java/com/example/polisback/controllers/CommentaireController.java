@@ -2,8 +2,12 @@ package com.example.polisback.controllers;
 
 import com.example.polisback.models.Commentaire;
 import com.example.polisback.services.CommentaireService;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +27,16 @@ public class CommentaireController {
         return commentaireService.findAll();
     }
 
+    @GetMapping("/desc")
+    public List<Commentaire> findAllCommentaireOrderByDateAjoutDesc() {
+        return commentaireService.findAllCommentaireOrderByDateAjoutDesc();
+    }
+
+    @GetMapping("/asc")
+    public List<Commentaire> findAllCommentaireOrderByDateAjoutAsc() {
+        return commentaireService.findAllCommentaireOrderByDateAjoutAsc();
+    }
+
     @PostMapping("")
     public Commentaire save(@RequestBody Commentaire commentaire) {
         return commentaireService.save(commentaire);
@@ -37,6 +51,8 @@ public class CommentaireController {
     public Optional<Commentaire> findById(@PathVariable Long id) {
         return commentaireService.findById(id);
     }
+
+
 
     @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
