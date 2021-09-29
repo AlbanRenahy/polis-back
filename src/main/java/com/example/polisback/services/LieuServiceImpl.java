@@ -2,6 +2,7 @@ package com.example.polisback.services;
 
 import com.example.polisback.models.Lieu;
 import com.example.polisback.repositories.LieuRepository;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -38,4 +39,16 @@ public class LieuServiceImpl implements LieuService{
         lieu.setNomLieu(lieu.getNomLieu().toUpperCase());
         return lieu;
     }
+
+    @Override
+    public List<Lieu> orderByNomLieu() {
+        return this.lieuRepository.findAll(Sort.by("nomLieu"));
+    }
+
+    @Override
+    public List<Lieu> orderByVille() {
+        return this.lieuRepository.findAll(Sort.by("ville"));
+    }
+
+
 }
