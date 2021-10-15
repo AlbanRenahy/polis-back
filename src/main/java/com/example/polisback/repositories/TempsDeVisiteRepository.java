@@ -9,5 +9,5 @@ import java.util.Date;
 public interface TempsDeVisiteRepository extends JpaRepository<TempsDeVisite, Long> {
 
 
-    TempsDeVisite findByHoraireVisite(Date horaireVisite);
+    TempsDeVisite findByHoraireVisite(String horaireVisite);
 }

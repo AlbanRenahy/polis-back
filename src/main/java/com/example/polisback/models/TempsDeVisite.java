@@ -19,6 +19,6 @@ public class TempsDeVisite {
     @Column(name = "ID")
     private Long id;
     @Column(name = "horaireVisite")
-    private Date horaireVisite;
+    private String horaireVisite;
 
 }

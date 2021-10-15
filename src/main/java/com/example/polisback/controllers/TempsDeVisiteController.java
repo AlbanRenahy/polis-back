@@ -40,7 +40,7 @@ public class TempsDeVisiteController {
     }
 
     @GetMapping("{horaireVisite}")
-    public TempsDeVisite findByHoraireVisite(@PathVariable Date horaireVisite){
+    public TempsDeVisite findByHoraireVisite(@PathVariable String horaireVisite){
         return this.tempsDeVisiteService.findByHoraireVisite(horaireVisite);
     }
     /*TODO : methode findByHoraireVisite a reverifier*/
