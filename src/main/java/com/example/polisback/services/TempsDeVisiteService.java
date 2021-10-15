@@ -14,5 +14,5 @@ public interface TempsDeVisiteService {
 
     public TempsDeVisite putTempsDeVisite(TempsDeVisite tempsDeVisite);
 
-    public TempsDeVisite findByHoraireVisite(Date horaireVisite);
+    public TempsDeVisite findByHoraireVisite(String horaireVisite);
 }

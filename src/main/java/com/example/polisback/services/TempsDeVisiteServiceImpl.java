@@ -36,7 +36,7 @@ public class TempsDeVisiteServiceImpl implements TempsDeVisiteService {
     }
 
     @Override
-    public TempsDeVisite findByHoraireVisite(Date horaireVisite) {
+    public TempsDeVisite findByHoraireVisite(String horaireVisite) {
         TempsDeVisite tempsDeVisite = this.tempsDeVisiteRepository.findByHoraireVisite(horaireVisite);
         tempsDeVisite.setId(tempsDeVisite.getId());
         return tempsDeVisite;
