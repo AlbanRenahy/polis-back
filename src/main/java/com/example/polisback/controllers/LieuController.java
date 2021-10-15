@@ -1,13 +1,11 @@
 package com.example.polisback.controllers;
 
 import com.example.polisback.models.Lieu;
-import com.example.polisback.models.Utilisateur;
 import com.example.polisback.services.LieuService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -39,11 +37,7 @@ public class LieuController {
         return this.lieuService.putLieu(lieu);
     }
 
-    @GetMapping("{nomLieu}")
-    public Lieu findByNomLieu(@PathVariable String nomLieu){
-        return this.lieuService.findByNomLieu(nomLieu);
-    }
-  
+
     @GetMapping("/trierId")
     public List<Lieu> orderByIdLieu() {
         return lieuService.orderByIdLieu();
@@ -58,6 +52,19 @@ public class LieuController {
     public List<Lieu> orderByVille() {
         return lieuService.orderByVille();
     }
+
+    @GetMapping("/cat/{nomCategorie}")
+    public List<Lieu> findByCategorie(@PathVariable String nomCategorie) {
+        return this.lieuService.findByCategorie(nomCategorie);
+        //TODO a revoir
+    }
+
+    @GetMapping("{id}")
+    public Optional<Lieu> findById(@PathVariable Long id){
+        return this.lieuService.findById(id);
+    }
+
+
 }
 
 

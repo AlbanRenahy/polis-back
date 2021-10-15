@@ -1,7 +1,9 @@
 package com.example.polisback.controllers;
 
 import com.example.polisback.models.Categorie;
+import com.example.polisback.models.Lieu;
 import com.example.polisback.services.CategorieService;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,5 +43,6 @@ public class CategorieController {
     @DeleteMapping("{id}")
     public void deleteById(@PathVariable Long id) {
         categorieService.deleteById(id);
-    }
-}
+    }}
+
+

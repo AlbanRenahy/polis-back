@@ -5,6 +5,7 @@ import com.example.polisback.repositories.LieuRepository;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
+import java.util.Optional;
 
 public class LieuServiceImpl implements LieuService{
 
@@ -40,6 +41,11 @@ public class LieuServiceImpl implements LieuService{
         return lieu;
     }
 
+    @Override
+    public List<Lieu> findByCategorie(String nomCategorie) {
+        return this.lieuRepository.findByCategorie(nomCategorie);
+    }
+
     public List<Lieu> orderByIdLieu() {
         return this.lieuRepository.findAll(Sort.by("ID"));
     }
@@ -52,5 +58,11 @@ public class LieuServiceImpl implements LieuService{
     public List<Lieu> orderByVille() {
         return this.lieuRepository.findAll(Sort.by("ville"));
     }
+
+    @Override
+    public Optional<Lieu> findById(Long id) {
+        return this.lieuRepository.findById(id);
+    }
+
 
 }
