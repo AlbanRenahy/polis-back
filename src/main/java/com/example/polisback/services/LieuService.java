@@ -26,4 +26,5 @@ public interface LieuService {
 
     public Optional <Lieu> findById(Long id);
 
+    List<Lieu> findByCategorieId(Long id);
 }

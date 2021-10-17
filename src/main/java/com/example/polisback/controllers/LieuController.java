@@ -58,13 +58,17 @@ public class LieuController {
         return this.lieuService.findByCategorie(nomCategorie);
         //TODO a revoir
     }
-
     @GetMapping("{id}")
     public Optional<Lieu> findById(@PathVariable Long id){
         return this.lieuService.findById(id);
     }
 
+    @GetMapping("/categorie/{id}")
+    public List<Lieu> findByCategorieId(@PathVariable Long id){
+        return this.lieuService.findByCategorieId(id);
 
-}
+        }
+    }
+
 
 

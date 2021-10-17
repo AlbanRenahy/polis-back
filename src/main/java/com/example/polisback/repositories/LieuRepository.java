@@ -11,4 +11,6 @@ public interface LieuRepository extends JpaRepository<Lieu, Long> {
     void deleteById(Long id);
 
     public List<Lieu> findByCategorie(String nomCategorie);
+
+    public List<Lieu> findByCategorieId(Long id);
 }

@@ -64,5 +64,10 @@ public class LieuServiceImpl implements LieuService{
         return this.lieuRepository.findById(id);
     }
 
+    @Override
+    public List<Lieu> findByCategorieId(Long id) {
+        return this.lieuRepository.findByCategorieId(id);
+    }
+
 
 }
