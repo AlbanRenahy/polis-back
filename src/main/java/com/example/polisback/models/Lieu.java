@@ -34,6 +34,16 @@ public class Lieu {
     private String ville;
     @Column(length = 500,name = "note")
     private String note;
+    @Column(length = 500,name = "category")
+    private String category;
+    @Column(length = 500,name = "tempsVisite")
+    private String tempsVisite;
+    @Column(length = 500,name = "image")
+    private String image;
+    @Column(length = 500,name = "region")
+    private String region;
+    @Column(length = 500,name = "famille")
+    private String famille;
 
 
     @OneToMany(cascade=CascadeType.ALL)
